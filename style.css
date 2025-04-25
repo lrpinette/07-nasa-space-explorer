@@ -7,8 +7,9 @@
 
 /* Base page styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Updated font to align with NASA branding */
+  background-color: #0b3d91; /* NASA's blue */
+  color: #ffffff; /* White text for better contrast */
   padding: 20px;
 }
 
@@ -29,9 +30,9 @@ body {
 }
 
 h1 {
-  font-family: Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Updated font */
   font-weight: bold;
-  color: #212121;
+  color: #ffffff; /* White for header text */
 }
 
 /* Logo */
@@ -66,12 +67,13 @@ button {
 
 /* Button specific */
 button {
-  background-color: #d3d3d3;
-  color: black;
+  background-color: #fc3d21; /* NASA's red */
+  color: #ffffff; /* White text for buttons */
   cursor: pointer;
 }
+
 button:hover {
-  background-color: #bfbfbf;
+  background-color: #d32f2f; /* Slightly darker red for hover effect */
 }
 
 /* Stack horizontally on wider screens */
@@ -101,7 +103,8 @@ button:hover {
   flex: 1 1 100%;  /* full width by default */
   min-width: 280px;
   max-width: 500px;
-  background: white;
+  background: #ffffff; /* White background for gallery items */
+  color: #0b3d91; /* NASA's blue for text */
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -117,13 +120,6 @@ button:hover {
   }
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
 .gallery-item p {
   margin-top: 10px;
   padding: 5px;
@@ -135,10 +131,76 @@ button:hover {
   flex: 1 1 100%;
   text-align: center;
   padding: 40px;
-  color: #666;
+  color: #d3d3d3; /* Light gray for placeholder text */
 }
 
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Image container with overlay */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease; /* Add smooth transition for scaling */
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Slightly grow the image on hover */
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff; /* White background for modal content */
+  color: #0b3d91; /* NASA's blue for text */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-image {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fc3d21; /* NASA's red */
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #d32f2f; /* Darker red on hover */
 }
